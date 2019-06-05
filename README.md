@@ -44,6 +44,8 @@ A return is considered late for one day rental if one day (3600 seconds * 24 hou
 
 * A unique slug for films and customer could have been used along with the UUID to allow easier retrieval and manipulations of films and customers via API
 
+* For simplicity an in-memory database has been used. A dockerized database e.g. Postgresql allows a closer resemblance to production environment.
+
 * The filmtransaction repository works with the assumption that the events are in order. The column createdOn is used also as rentedOn. A different field rentedOn could have been added to allow this separation of concern. 
 
 
