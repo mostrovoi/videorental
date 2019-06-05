@@ -15,5 +15,4 @@ class JdbcCustomerMapper : RecordMapper<CustomerRecord, Customer> {
                 updatedOn = customerRecord.updatedOn.toInstant())
 
     }
-
 }

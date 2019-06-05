@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.casumo</groupId>
 	<artifactId>videorental</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.1</version>
 	<name>videorental</name>
 	<description>Technical test for Casumo</description>
 
@@ -30,7 +30,6 @@
 		<liquibase.sql.password></liquibase.sql.password>
 		<liquibase.sql.driver>org.h2.Driver</liquibase.sql.driver>
 		<liquibase.sql.changelogfile>src/main/resources/db/liquibase-changelog.xml</liquibase.sql.changelogfile>
-
 	</properties>
 
 	<dependencies>
@@ -146,7 +145,7 @@
 						<generate></generate>
 						<target>
 							<packageName>com.casumo.videorental.infrastructure.repository.jooq</packageName>
-							<directory>src/main/java</directory>
+							<directory>src/main/kotlin</directory>
 						</target>
 					</generator>
 				</configuration>
