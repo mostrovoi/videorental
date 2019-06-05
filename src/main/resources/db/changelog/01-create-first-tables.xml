@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.3.xsd">
+
+    <changeSet id="01-create-first-tables" author="operez">
+
+        <createTable tableName="customer">
+            <column name="customer_id" type="varchar(64)">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="bonus_card_points" type="integer"/>
+            <column name="name" type="varchar(64)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_on" type="timestamp">
+                <constraints nullable="false"/>
+            </column>
+            <column name="updated_on" type="timestamp">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <createTable tableName="film">
+            <column name="film_id" type="varchar(64)">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="name" type="varchar(128)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="type" type="varchar(60)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_on" type="timestamp">
+                <constraints nullable="false"/>
+            </column>
+            <column name="updated_on" type="timestamp">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <createTable tableName="film_transaction">
+            <column name="film_transaction_id" type="varchar(64)">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="film_id" type="varchar(64)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="customer_id" type="varchar(64)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="num_days" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="action" type="varchar(30)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_on" type="timestamp">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <addForeignKeyConstraint baseColumnNames="film_id"
+                                 baseTableName="film_transaction"
+                                 constraintName="fk_film_id_film_transaction"
+                                 referencedColumnNames="film_id"
+                                 referencedTableName="film"
+                                 onDelete="RESTRICT"/>
+        <addForeignKeyConstraint baseColumnNames="customer_id"
+                                 baseTableName="film_transaction"
+                                 constraintName="fk_customer_id_film_transaction"
+                                 referencedColumnNames="customer_id"
+                                 referencedTableName="customer"
+                                 onDelete="RESTRICT"/>
+
+        <createTable tableName="payment_transaction">
+            <column name="payment_transaction_id" type="varchar(64)">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="customer_id" type="varchar(64)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="amount" type="long">
+                <constraints nullable="true"/>
+            </column>
+            <column name="payment_type" type="varchar(64)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_on" type="timestamp">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <addForeignKeyConstraint baseColumnNames="customer_id"
+                                 baseTableName="payment_transaction"
+                                 constraintName="fk_customer_id_payment_transaction"
+                                 referencedColumnNames="customer_id"
+                                 referencedTableName="customer"
+                                 onDelete="RESTRICT"/>
+
+    </changeSet>
+</databaseChangeLog>
