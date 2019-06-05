@@ -25,7 +25,7 @@
         <surefire.plugin.version>3.0.0-M3</surefire.plugin.version>
 		<h2.version>1.4.199</h2.version>
 		<liquibase.version>3.6.2</liquibase.version>
-		<liquibase.sql.url>jdbc:h2:file:~/videorental</liquibase.sql.url>
+		<liquibase.sql.url>jdbc:h2:mem:videorental</liquibase.sql.url>
 		<liquibase.sql.username>sa</liquibase.sql.username>
 		<liquibase.sql.password></liquibase.sql.password>
 		<liquibase.sql.driver>org.h2.Driver</liquibase.sql.driver>
