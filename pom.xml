@@ -144,7 +144,7 @@
 						</database>
 						<generate></generate>
 						<target>
-							<packageName>com.casumo.videorental.infrastructure.repository.jooq</packageName>
+							<packageName>com.acme.videorental.infrastructure.repository.jooq</packageName>
 							<directory>src/main/kotlin</directory>
 						</target>
 					</generator>

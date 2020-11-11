@@ -1,6 +1,7 @@
-# Casumo video rental
+# Video rental
 
-Implementation of the technical test for Casumo regarding a video rental store.
+Implementation of a video rental store using DDD inspired by the book
+**Implementing domain-driven design** by Vaughn Vernon
 
 # Run the application
 
@@ -31,7 +32,7 @@ This application has been done trying to use DDD and hexagonal architecture.
 There has been identified 4 different bounded context (customer lifecycle, film lifecycle, filmtransactions and filmpayments). 
 There could be a fifth, gamification, but for the time being bonuscard has been modelled as a value object for customer.
 
-Film transactions have a event store associated and we use the in memory read model for checking the state of the movie. 
+Film transactions have an event store associated and use the in memory read model for checking the state of the movie. 
 The rental itself is the core of the domain and this allows for more exploitations of the data should it be needed.
 
 A return is considered late for one day rental if one day (3600 seconds * 24 hours) or more has passed.
