@@ -8,13 +8,21 @@ Implementation of a video rental store using DDD inspired by the book
 We wamt to build an online video rental store with three main features:
 
 1.- Have an inventory of all the films
+
   List all films available and existing in the online store  
+
 2.- Calculate the price for rentals 
-  The price of rentals is based on the type of film and how many days the film is rented. The customers say when renting for how many days they want to rent and pay upfront. If the film is returned late, then money for the extra days is charged when returning.
-  The online store has 3 types of films: 
-   1.- **new film:** price is <PREMIUM PRICE> times number of days rented
-   2.- **regular film:** price is <BASIC PRICE> for the first 3 days and then <BASIC PRICE> times the number of days over 3
-   3.- **old film:** price is <BASIC PRICE> for the first 5 days and then <BASIC PRICE> times the number of days over 5
+
+The price of rentals is based on the type of film and how many days the film is rented. The customers say when renting for how many days they want to rent and pay upfront. If the film is returned late, then money for the extra days is charged when returning.
+
+The online store has 3 types of films: 
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.- **new film:** price is <PREMIUM PRICE> times number of days rented
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.- **regular film:** price is <BASIC PRICE> for the first 3 days and then <BASIC PRICE> times the number of days over 3
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.- **old film:** price is <BASIC PRICE> for the first 5 days and then <BASIC PRICE> times the number of days over 5
+
 3.- Keep track of the costumers bonus points
   Customers get bonus points when renting films. A new release gives 2 points and other films give one point per rental
 
