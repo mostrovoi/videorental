@@ -1,5 +1,6 @@
 # Video rental
 
+![videorental](https://github.com/mostrovoi/videorental/workflows/videorental/badge.svg)
 [![codecov](https://codecov.io/gh/mostrovoi/videorental/branch/master/graph/badge.svg)](https://codecov.io/gh/mostrovoi/videorental)
 
 Implementation of a video rental store using DDD inspired by the book
