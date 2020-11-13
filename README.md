@@ -2,7 +2,6 @@
 
 ![videorental](https://github.com/mostrovoi/videorental/workflows/videorental/badge.svg)
 [![codecov](https://codecov.io/gh/mostrovoi/videorental/branch/master/graph/badge.svg)](https://codecov.io/gh/mostrovoi/videorental)
-[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=mostrovoi_videorental&metric=alert_status)](https://sonarcloud.io/dashboard?id=mostrovoi_videorental)
 
 Implementation of a video rental store using DDD inspired by the book
 **Implementing domain-driven design** by Vaughn Vernon
