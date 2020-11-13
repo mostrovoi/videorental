@@ -9,7 +9,7 @@ data class Customer(val customerId: CustomerId, var bonusCard: BonusCard, val na
         fun aNewCustomer(customerId: CustomerId, name: String): Customer {
             require(name.length > 2)
             return Customer(customerId = customerId,
-                    bonusCard = BonusCard.aNewCard(),
+                    bonusCard = BonusCard(),
                     name = name,
                     createdOn = Instant.now(),
                     updatedOn = Instant.now())
