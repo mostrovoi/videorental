@@ -1,5 +1,7 @@
 # Video rental
 
+[![codecov](https://codecov.io/gh/mostrovoi/videorental/branch/master/graph/badge.svg)](https://codecov.io/gh/mostrovoi/videorental)
+
 Implementation of a video rental store using DDD inspired by the book
 **Implementing domain-driven design** by Vaughn Vernon
 
