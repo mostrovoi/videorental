@@ -8,12 +8,9 @@ import org.jooq.RecordMapper
 
 class JdbcFilmMapper : RecordMapper<FilmRecord, Film> {
     override fun map(filmRecord: FilmRecord): Film {
-        return Film(filmId = FilmId(filmRecord.filmId),
+        return Film.create(filmId = FilmId(filmRecord.filmId),
                 name = filmRecord.name,
-                type = FilmTypeEnum.valueOf(filmRecord.type),
-                createdOn = filmRecord.createdOn.toInstant(),
-                updatedOn = filmRecord.updatedOn.toInstant())
+                type = FilmTypeEnum.valueOf(filmRecord.type))
 
     }
-
 }

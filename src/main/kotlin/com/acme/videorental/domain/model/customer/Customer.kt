@@ -3,7 +3,7 @@ package com.acme.videorental.domain.model.customer
 import com.acme.videorental.domain.model.common.FilmTypeEnum
 import java.time.Instant
 
-data class Customer(val customerId: CustomerId, var bonusCard: BonusCard, val name: String, val createdOn: Instant, val updatedOn: Instant) {
+data class Customer private constructor(val customerId: CustomerId, var bonusCard: BonusCard, val name: String, val createdOn: Instant, val updatedOn: Instant) {
 
     companion object {
         fun aNewCustomer(customerId: CustomerId, name: String): Customer {

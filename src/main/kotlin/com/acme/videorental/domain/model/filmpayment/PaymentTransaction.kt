@@ -2,6 +2,7 @@ package com.acme.videorental.domain.model.filmpayment
 
 import com.acme.videorental.domain.model.common.FilmTypeEnum
 import com.acme.videorental.domain.model.customer.CustomerId
+import com.acme.videorental.domain.model.filmtransaction.PricingTypeEnum
 import java.time.Duration
 import java.time.Instant
 
@@ -9,16 +10,12 @@ data class PaymentTransaction(val paymentTransactionId: PaymentTransactionId, va
 
     companion object {
 
-        private const val PREMIUM_PRICE = 40L
-        private const val BASIC_PRICE = 30L
-
         private const val REGULAR_FILMS_MAX_DAYS = 3
         private const val OLD_FILMS_MAX_DAYS = 5
         private const val NEW_FILMS_MAX_DAYS = 1
 
         const val NO_SURCHARGE = 0L
-
-
+        
         fun calculatePriceForOverdueReturn(pricePerDay: Long, instantRented: Instant, instantReturned: Instant, paidRentedDays: Int): Long {
 
             check(instantReturned.isAfter(instantRented))
@@ -44,17 +41,17 @@ data class PaymentTransaction(val paymentTransactionId: PaymentTransactionId, va
             require(numDays > 0)
 
             return when (filmType) {
-                FilmTypeEnum.NEW -> PREMIUM_PRICE * numDays
-                FilmTypeEnum.REGULAR -> calculatePriceBasedOnDays(pricePerDay = BASIC_PRICE, numDays = numDays, maxDays = REGULAR_FILMS_MAX_DAYS)
-                FilmTypeEnum.OLD -> calculatePriceBasedOnDays(pricePerDay = BASIC_PRICE, numDays = numDays, maxDays = OLD_FILMS_MAX_DAYS)
+                FilmTypeEnum.NEW -> PricingTypeEnum.PREMIUM.price * numDays
+                FilmTypeEnum.REGULAR -> calculatePriceBasedOnDays(pricePerDay = PricingTypeEnum.BASIC.price, numDays = numDays, maxDays = REGULAR_FILMS_MAX_DAYS)
+                FilmTypeEnum.OLD -> calculatePriceBasedOnDays(pricePerDay = PricingTypeEnum.BASIC.price, numDays = numDays, maxDays = OLD_FILMS_MAX_DAYS)
             }
         }
 
         fun getPriceBasedOnFilmType(filmType: FilmTypeEnum): Long {
             return when (filmType) {
-                FilmTypeEnum.NEW -> PREMIUM_PRICE
-                FilmTypeEnum.REGULAR -> BASIC_PRICE
-                FilmTypeEnum.OLD -> BASIC_PRICE
+                FilmTypeEnum.NEW -> PricingTypeEnum.PREMIUM.price
+                FilmTypeEnum.REGULAR -> PricingTypeEnum.BASIC.price
+                FilmTypeEnum.OLD -> PricingTypeEnum.BASIC.price
             }
         }
 
