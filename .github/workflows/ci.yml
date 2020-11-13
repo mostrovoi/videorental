@@ -9,9 +9,6 @@ on:
 
 jobs:
   build:
-    env:
-      CODECOV_TOKEN: 529730c1-836a-47b1-8cc3-8e8bc5e8fb84
-
     runs-on: ubuntu-latest
 
     steps:
@@ -24,4 +21,5 @@ jobs:
       run: ./mvnw -B package --file pom.xml
     - uses: codecov/codecov-action@v1
       with: 
-       file: target/site/jacoco/jacoco.xml
+        token: ${{ secrets.CODECOV_TOKEN }}
+        file: target/jacoco.exec
