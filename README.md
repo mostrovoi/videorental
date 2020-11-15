@@ -36,8 +36,14 @@ Let's start with a diagram out of a event storming session:
 
 ![Event storming bounded contexts](https://github.com/mostrovoi/videorental/blob/master/videorental-eventstorming-bcs.png?raw=true)
 
-There has been identified 4 different bounded contexts i.e. customer lifecycle (user), film lifecycle (purchases), filmtransactions (rentals)  and filmpayments (payments). 
+There has been identified 4 different bounded contexts i.e. customer lifecycle (customer), film lifecycle (purchases), filmtransactions (rentals)  and filmpayments (payments). 
 There could be a fifth, gamification, but for the time being bonuscard has been modelled as a value object for customer.
+
+We used package by feature, i.e. screaming architecture, giving us the following features:
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- We can see immediately, just by opening the project, what the application does 
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Allows promoting bounded contexts to microservices/different projects easily.
 
 Film transactions have an event store associated and use the in memory read model for checking the state of the movie. 
 The rental itself is the core of the domain and this allows for more exploitations of the data should it be needed.
