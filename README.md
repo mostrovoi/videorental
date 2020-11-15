@@ -36,7 +36,7 @@ Let's start with a diagram out of a event storming session:
 
 ![Event storming bounded contexts](https://github.com/mostrovoi/videorental/blob/master/videorental-eventstorming-bcs.png?raw=true)
 
-There has been identified 4 different bounded context (customer lifecycle, film lifecycle, filmtransactions and filmpayments). 
+There has been identified 4 different bounded contexts i.e. customer lifecycle (user), film lifecycle (purchases), filmtransactions (rentals)  and filmpayments (payments). 
 There could be a fifth, gamification, but for the time being bonuscard has been modelled as a value object for customer.
 
 Film transactions have an event store associated and use the in memory read model for checking the state of the movie. 
