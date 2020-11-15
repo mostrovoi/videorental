@@ -11,6 +11,5 @@ class JdbcFilmMapper : RecordMapper<FilmRecord, Film> {
         return Film.create(filmId = FilmId(filmRecord.filmId),
                 name = filmRecord.name,
                 type = FilmTypeEnum.valueOf(filmRecord.type))
-
     }
 }
