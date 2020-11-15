@@ -39,7 +39,7 @@ Let's start with a diagram out of a event storming session:
 There has been identified 4 different bounded contexts i.e. customer lifecycle (customer), film lifecycle (purchases), filmtransactions (rentals)  and filmpayments (payments). 
 There could be a fifth, gamification, but for the time being bonuscard has been modelled as a value object for customer.
 
-We used package by feature, i.e. screaming architecture, giving us the following features:
+We used package by feature, i.e. screaming architecture, giving us the following benefits:
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- We can see immediately, just by opening the project, what the application does 
 
